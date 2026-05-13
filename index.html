@@ -6,81 +6,130 @@
     <title>Vaquero Downloads</title>
 
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #111827;
-            color: white;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #0f172a, #111827);
+            color: white;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
+            padding: 20px;
         }
 
         .container {
-            text-align: center;
-            background: #1f2937;
+            width: 100%;
+            max-width: 650px;
+            background: rgba(31, 41, 55, 0.95);
+            border-radius: 20px;
             padding: 40px;
-            border-radius: 16px;
-            width: 90%;
-            max-width: 600px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.4);
+            text-align: center;
+            box-shadow: 0 0 35px rgba(0,0,0,0.4);
+            border: 1px solid rgba(255,255,255,0.08);
         }
 
         h1 {
+            font-size: 42px;
             margin-bottom: 10px;
         }
 
-        p {
+        .subtitle {
             color: #cbd5e1;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
+            font-size: 17px;
         }
 
         .download-btn {
+            position: relative;
             display: block;
             text-decoration: none;
-            background: #2563eb;
             color: white;
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 10px;
+            padding: 18px;
+            margin: 18px 0;
+            border-radius: 14px;
             font-size: 18px;
-            transition: 0.2s;
+            font-weight: bold;
+            overflow: hidden;
+            transition: 0.25s ease;
+            background: #2563eb;
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+
+        /* thin inside glow */
+        .download-btn::before {
+            content: "";
+            position: absolute;
+            inset: 2px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.25);
+            pointer-events: none;
         }
 
         .download-btn:hover {
+            transform: translateY(-3px);
             background: #1d4ed8;
-            transform: scale(1.02);
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.35);
+        }
+
+        .download-btn span {
+            position: relative;
+            z-index: 2;
         }
 
         footer {
-            margin-top: 25px;
-            font-size: 13px;
+            margin-top: 30px;
             color: #94a3b8;
+            font-size: 13px;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 32px;
+            }
+
+            .download-btn {
+                font-size: 16px;
+                padding: 16px;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <div class="container">
         <h1>Vaquero Downloads</h1>
-        <p>Download the presentation files below.</p>
 
-        <a class="download-btn" href="vequeros%20.mp4" download>
-            Download Video (.mp4)
+        <p class="subtitle">
+            Access the video, PDF, and PowerPoint presentation below.
+        </p>
+
+        <a class="download-btn"
+           href="https://1drv.ms/v/c/c3ea321488f12b08/IQCTD8J5qVnuSZNnvEffDGqIAaRSaDo1-0f8_a7xwoU3Auc?e=vGV5a9"
+           target="_blank">
+            <span>🎬 Watch / Download Video</span>
         </a>
 
-        <a class="download-btn" href="Vequaeros.pdf" download>
-            Download PDF
+        <a class="download-btn"
+           href="Vequaeros.pdf"
+           download>
+            <span>📄 Download PDF</span>
         </a>
 
-        <a class="download-btn" href="Vaquero_Storybook_Presentation.pptx" download>
-            Download PowerPoint
+        <a class="download-btn"
+           href="Vaquero_Storybook_Presentation.pptx"
+           download>
+            <span>📊 Download PowerPoint</span>
         </a>
 
         <footer>
-            Hosted with GitHub Pages
+            Made by youssof 
         </footer>
     </div>
 
